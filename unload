@@ -1,0 +1,13 @@
+#!/bin/sh
+if [ "$1" = "0" ]; then
+	echo uninstall pib pcie hpif driver... 
+	rmmod pib_pcie_hpif || exit -1
+elif [ "$1" = "1" ]; then
+	echo uninstall pib pcie lwif driver... 
+	rmmod pib_pcie_lwif || exit -1
+else 
+	echo uninstall pib pcie hpif and lwif driver... 
+	rmmod pib_pcie_hpif || exit -1
+	rmmod pib_pcie_lwif || exit -1
+		
+fi
